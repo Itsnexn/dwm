@@ -163,7 +163,7 @@ static Key keys[] = {
     // brightness and audio
     {0, XF86XK_AudioMute,          spawn, SHCMD("amixer set Master 1+ toggle")},
     {0, XF86XK_AudioRaiseVolume,   spawn, SHCMD("amixer -q set Master 10%+")},
-    {0, XF86XK_AudioLowerVolume,   spawn, SHCMD("amixer -q set Master 10%+")},
+    {0, XF86XK_AudioLowerVolume,   spawn, SHCMD("amixer -q set Master 10%-")},
     {0, XF86XK_MonBrightnessDown,  spawn, SHCMD("xbacklight -dec 5")},
     {0, XF86XK_MonBrightnessUp,    spawn, SHCMD("xbacklight -inc 5")},
 
@@ -186,7 +186,7 @@ static Key keys[] = {
     { MODKEY,              XK_b,       togglebar,      {0} },
     { MODKEY|ControlMask,  XK_t,       togglegaps,     {0} },
     { MODKEY,              XK_f,       togglefloating, {0} },
-    // { MODKEY|ShiftMask,    XK_f,    togglefullscr,  {0} },
+    { MODKEY|ShiftMask,    XK_f,    togglefullscr,  {0} },
 
     { MODKEY|ControlMask,  XK_w,       tabmode,        { -1 } },
     { MODKEY,              XK_j,       focusstack,     {.i = +1 } },
@@ -208,25 +208,25 @@ static Key keys[] = {
     { MODKEY,              XK_Tab,     view,           {0} },
 
     // overall gaps
-    { MODKEY|ControlMask,  XK_i,       incrgaps,       {.i = +1 } },
-    { MODKEY|ControlMask,  XK_d,       incrgaps,       {.i = -1 } },
+    // { MODKEY|ControlMask,  XK_i,       incrgaps,       {.i = +1 } },
+    // { MODKEY|ControlMask,  XK_d,       incrgaps,       {.i = -1 } },
     // inner gaps
-    { MODKEY|ShiftMask,                 XK_i,       incrigaps,      {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_i,       incrigaps,      {.i = -1 } },
+    // { MODKEY|ShiftMask,                 XK_i,       incrigaps,      {.i = +1 } },
+    // { MODKEY|ControlMask|ShiftMask,     XK_i,       incrigaps,      {.i = -1 } },
 
     // outer gaps
-    { MODKEY|ControlMask,               XK_o,       incrogaps,      {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_o,       incrogaps,      {.i = -1 } },
+    // { MODKEY|ControlMask,               XK_o,       incrogaps,      {.i = +1 } },
+    // { MODKEY|ControlMask|ShiftMask,     XK_o,       incrogaps,      {.i = -1 } },
 
     // inner+outer hori, vert gaps
-    { MODKEY|ControlMask,               XK_6,       incrihgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_6,       incrihgaps,     {.i = -1 } },
-    { MODKEY|ControlMask,               XK_7,       incrivgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_7,       incrivgaps,     {.i = -1 } },
-    { MODKEY|ControlMask,               XK_8,       incrohgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_8,       incrohgaps,     {.i = -1 } },
-    { MODKEY|ControlMask,               XK_9,       incrovgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_9,       incrovgaps,     {.i = -1 } },
+    // { MODKEY|ControlMask,               XK_6,       incrihgaps,     {.i = +1 } },
+    // { MODKEY|ControlMask|ShiftMask,     XK_6,       incrihgaps,     {.i = -1 } },
+    // { MODKEY|ControlMask,               XK_7,       incrivgaps,     {.i = +1 } },
+    // { MODKEY|ControlMask|ShiftMask,     XK_7,       incrivgaps,     {.i = -1 } },
+    // { MODKEY|ControlMask,               XK_8,       incrohgaps,     {.i = +1 } },
+    // { MODKEY|ControlMask|ShiftMask,     XK_8,       incrohgaps,     {.i = -1 } },
+    // { MODKEY|ControlMask,               XK_9,       incrovgaps,     {.i = +1 } },
+    // { MODKEY|ControlMask|ShiftMask,     XK_9,       incrovgaps,     {.i = -1 } },
 
     // { MODKEY|ControlMask|ShiftMask,     XK_d,       defaultgaps,    {0} },
 
