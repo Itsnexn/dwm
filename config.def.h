@@ -168,7 +168,7 @@ static Key keys[] = {
     {0, XF86XK_MonBrightnessUp,    spawn, SHCMD("xbacklight -inc 5")},
 
     // screenshot fullscreen and cropped
-    {MODKEY|ControlMask,   XK_Print,   spawn, SHCMD("flameshot gui")},
+    {0,                    XK_Print,   spawn, SHCMD("flameshot gui")},
 
 
     { MODKEY,              XK_i,       spawn,  SHCMD("rofi -show drun") },
