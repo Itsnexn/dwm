@@ -3,8 +3,6 @@
 # ^c$var^ = fg color
 # ^b$var^ = bg color
 
-interval=0
-
 # load colors
 black="#1E1D2D"
 green="#ABE9B3"
@@ -17,26 +15,24 @@ purple="#cba6f7"
 pink="#f5c2e7"
 yellow="#f9e2af"
 
-SEP="b^$black^c^$black^ "
-
 cpu() {
-  cpu_val=$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]
-
-  echo -ne "^c$green^ CPU $cpu_val%"
+    cpu_val=$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]
+    echo -ne "^c$green^ CPU $cpu_val%"
 }
 
 battery() {
-  get_capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
-  printf "^c$blue^   $get_capacity" }
+    get_capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
+    printf "^c$blue^   $get_capacity"
+}
 
 brightness() {
-  printf "^c$red^   "
-  printf "^c$red^%.0f\n" $(xbacklight -get)
+    printf "^c$red^   "
+    printf "^c$red^%.0f\n" $(xbacklight -get)
 }
 
 mem() {
-  printf "^c$blue^^b$black^  "
-  printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+    printf "^c$blue^^b$black^  "
+    printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
 wlan() {
@@ -58,6 +54,7 @@ vol(){
 }
 
 while true; do
-
-  sleep 1 && xsetroot -name "$(battery) $(brightness) $(cpu) $(mem) $(wlan) $(vol) $(clock)"
+    xsetroot -name "$(battery) $(brightness) $(cpu) $(mem) $(wlan) $(vol) $(clock)"
+    sleep 1
 done
+
