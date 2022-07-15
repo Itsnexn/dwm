@@ -8,8 +8,6 @@
 // border sz of windows
 static const unsigned int borderpx  = 2;
 
-
-
 // snap pixel
 static const unsigned int snap      = 32;
 
@@ -28,10 +26,13 @@ static const int smartgaps          = 1;
 static const unsigned int systraypinning = 0;
 // systray spacing
 static const unsigned int systrayspacing = 10;
-static const unsigned int systrayiconsize = 16; /* systray icon size in px */
+
+// systray icon size in px
+static const unsigned int systrayiconsize = 16;
 // 1: if pinning fails,display systray on the 1st monitor,False: display systray on last monitor*/
 static const int systraypinningfailfirst = 1;
 static const int showsystray        = 1; // 0: means no systray
+
 static const int showbar            = 1; // 0 means no bar
 // showtab_never, showtab_auto, showtab_nmodes, showtab_always
 static const int showtab            = showtab_never;
