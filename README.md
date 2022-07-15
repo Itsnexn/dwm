@@ -1,48 +1,79 @@
-dwm - dynamic window manager
-============================
-dwm is an extremely fast, small, and dynamic window manager for X.
+```
+                        ██
+                        ██
+                        ██
+                        ██
+                ██████████     ██    ██████████████
+                ██      ██     ██    ██    ██    ██
+                ██      ██     ██    ██    ██    ██
+                ███████████████████████    ██    ██
+
+|=------------------------------------------------------------------=|
+|=------=[ 0xNexn Build of suckless dynamic window manager ]=-------=|
+|=------------------------------------------------------------------=|
+|=-----------------------=[    Itsnexn   ]=-------------------------=|
+|=---------------------=[ 0xnexn@proton.me ]=-----------------------=|
+|=------------------------------------------------------------------=|
+
+--[ Table of contents
+
+0 - Introduction
+1 - Installation
+2 - Hacking guides
+3 - Other Links
+
+--[ 0 - Introduction
+
+dwm is a dynamic window manager for X. it means it can manage windows
+in tiled, monocle and floating layouts. dwm is customized through
+editing its source code so if you wan't to learn how it works best way
+is reading the source. dwm is written in c which makes it fast as f.
+
+--[ 1 - Installation
+
+before you install the window manager you have to build it. you can use
+gnu make to build the dwm.
+
+enter:
+$ sudo make install
+this will install dwm for you.
+
+you can either run it with startx or using your login manager.
+
+to start with startx:
+$ startx ~/path/to/repo/run.sh
+
+and to run it from your login manager you have to create a *.desktop
+file in the /usr/share/xsessions/
+
+your desktop file should be something like this:
+----------------------------------------------------------------------
+[Desktop Entry]
+Name=dwm
+Comment=suckless dynamic window manager
+Exec=/home/user/path/to/repo/run.sh
+Type=Application
+----------------------------------------------------------------------
+
+now login and enjoy from your new window manager.
+
+--[ 2 - Hacking guides
 
 
-Requirements
-------------
-In order to build dwm you need the Xlib header files.
+configuring this wm is really simple due to all the options in config.def.h
+is explained with comments.
 
+because this build is heavily patched you probably will have some problem
+patching the source but you can easily read through the patch file and
+apply the customizations.
 
-Installation
-------------
-Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+--[ 3 - Other Links
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
+[0]: 0xNexn Dotfiles - https://github.com/itsnexn/dotfiles
+[1]: Catppuccin ColorScheme - https://github.com/catppuccin/catppuccin
+[2]: Dwm Main page - https://dwm.suckless.org/
+[3]: Dwm tutorials - https://dwm.suckless.org/tutorial/
+[4]: Chadwm - https://github.com/siduck/chadwm/
 
-    make clean install
-
-
-Running dwm
------------
-Add the following line to your .xinitrc to start dwm using startx:
-
-    exec dwm
-
-In order to connect dwm to a specific display, make sure that
-the DISPLAY environment variable is set correctly, e.g.:
-
-    DISPLAY=foo.bar:1 exec dwm
-
-(This will start dwm on display :1 of the host foo.bar.)
-
-In order to display status info in the bar, you can do something
-like this in your .xinitrc:
-
-    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-    do
-    	sleep 1
-    done &
-    exec dwm
-
-
-Configuration
--------------
-The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
+|=[ EOF ]=----------------------------------------------------------=|
+```
