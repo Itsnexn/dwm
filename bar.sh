@@ -27,8 +27,7 @@ cpu() {
 
 battery() {
   get_capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
-  printf "^c$blue^   $get_capacity"
-}
+  printf "^c$blue^   $get_capacity" }
 
 brightness() {
   printf "^c$red^   "
@@ -54,7 +53,6 @@ clock() {
 
 vol(){
     volume=$(pactl get-sink-volume @DEFAULT_SINK@ | tail -n 2 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' | head -n 1)
-    printf "^c$black^ ^b$purple^  "
     printf "^c$black^ ^b$purple^  "
     echo -ne "^c$purple^^b$black^ $volume%"
 }
